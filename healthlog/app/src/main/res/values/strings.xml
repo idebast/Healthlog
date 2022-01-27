@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Healthlog</string>
+    <string name="hello_blank_fragment">string test</string>
+    <string name="bloeddruk">Bloeddruk</string>
+    <string name="pols">Pols</string>
+    <string name="gewicht">Gewicht</string>
+    <string name="label_pols">Pols:</string>
+    <string name="hint_onderdruk">Onderdruk</string>
+    <string name="label_bovendruk">Bovendruk:</string>
+    <string name="hint_bovendruk">Bovendruk</string>
+    <string name="label_onderdruk">Onderdruk:</string>
+    <string name="hint_pols">Pols</string>
+    <string name="hint_gewicht">Gewicht</string>
+    <string name="fab_add">Add</string>
+    <string name="label_gewicht">Gewicht:</string>
+    <string name="hint_opmerking">Opmerking</string>
+    <string name="label_opmerking">Opmerking:</string>
+    <string name="label_show_chart">Show Chart</string>
+    <string name="hint_bpm">bpm</string>
+    <string name="label_populate_database">Populate Database</string>
+</resources>

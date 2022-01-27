@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/card_layout"
+        android:layout_width="407dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_mmhg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:text="mmHg"
+            android:textSize="10sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tv_Onder"
+            app:layout_constraintStart_toEndOf="@+id/tv_Onder"
+            tools:text="mmHg" />
+
+        <TextView
+            android:id="@+id/tv_bpm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:text="bpm"
+            android:textSize="10sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tv_pols"
+            app:layout_constraintStart_toEndOf="@+id/tv_pols"
+            tools:text="bpm" />
+
+        <TextView
+            android:id="@+id/tv_Datum2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:clickable="true"
+            android:onClick="onClicktextDatum"
+            android:text="2036-07-01"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_Time2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:clickable="true"
+            android:onClick="onClicktextTime"
+            android:text="10:00"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/tv_Datum2"
+            app:layout_constraintTop_toTopOf="@+id/tv_Datum2" />
+
+        <TextView
+            android:id="@+id/tv_pols"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/hint_pols"
+            android:textSize="10sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tv_Onder"
+            app:layout_constraintStart_toEndOf="@+id/tv_mmhg" />
+
+        <TextView
+            android:id="@+id/tv_Onder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hint_onderdruk"
+            android:textSize="10sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tv_Boven"
+            app:layout_constraintStart_toEndOf="@+id/tv_fwds" />
+
+        <TextView
+            android:id="@+id/tv_Boven"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/hint_bovendruk"
+            android:textSize="10sp"
+            android:visibility="visible"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tv_kg"
+            app:layout_constraintStart_toEndOf="@+id/tv_kg" />
+
+        <TextView
+            android:id="@+id/tv_fwds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tv_Boven"
+            app:layout_constraintStart_toEndOf="@+id/tv_Boven" />
+
+        <TextView
+            android:id="@+id/tv_Gewicht"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/hint_gewicht"
+            android:textSize="10sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tv_Time2"
+            app:layout_constraintStart_toEndOf="@+id/tv_Time2" />
+
+        <TextView
+            android:id="@+id/tv_kg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:text="kg"
+            android:textSize="10sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tv_Gewicht"
+            app:layout_constraintStart_toEndOf="@+id/tv_Gewicht" />
+
+        <TextView
+            android:id="@+id/tv_Opmerking"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/hint_opmerking"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv_Datum2"
+            app:layout_constraintTop_toBottomOf="@+id/tv_Gewicht" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

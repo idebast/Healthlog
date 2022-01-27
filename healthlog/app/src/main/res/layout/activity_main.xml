@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextView
+        android:id="@+id/tv_Time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:clickable="true"
+        android:onClick="onClicktextTime"
+        android:text="10:00:00"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_Datum"
+        app:layout_constraintStart_toEndOf="@+id/tv_Datum" />
+
+    <TextView
+        android:id="@+id/tv_Datum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:clickable="true"
+        android:onClick="onClicktextDatum"
+        android:text="2036-07-01"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/til_bovendruk"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+
+    <fragment
+        android:id="@+id/navhost"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/divider"
+        app:navGraph="@navigation/main_navigation" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="409dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fab_AddEntry" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_AddEntry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:clickable="true"
+        android:contentDescription="@string/fab_add"
+        android:onClick="onClickfab_AddEntry"
+        app:fabSize="mini"
+        app:layout_constraintEnd_toEndOf="@+id/til_opmerking"
+        app:layout_constraintTop_toBottomOf="@+id/til_opmerking"
+        app:srcCompat="@drawable/ic_action_add" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_pols"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/til_onderdruk"
+        app:layout_constraintTop_toBottomOf="@+id/til_gewicht">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_Pols"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/hint_pols"
+            android:imeOptions="actionNext"
+            android:inputType="number"
+            android:nextFocusForward="@+id/et_Opmerking"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_bovendruk"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/til_onderdruk"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/til_gewicht">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_Bovendruk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/hint_bovendruk"
+            android:imeOptions="actionNext"
+            android:inputType="number"
+            android:nextFocusForward="@+id/et_Onderdruk"
+            android:textSize="14sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_onderdruk"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/til_pols"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/til_bovendruk"
+        app:layout_constraintTop_toBottomOf="@+id/til_gewicht">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_Onderdruk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/hint_onderdruk"
+            android:imeOptions="actionNext"
+            android:inputType="number"
+            android:nextFocusForward="@+id/et_Pols"
+            android:textSize="14sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_opmerking"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:imeOptions="actionNext"
+        android:nextFocusForward="@+id/til_gewicht"
+        app:layout_constraintEnd_toEndOf="@+id/til_pols"
+        app:layout_constraintStart_toStartOf="@+id/til_bovendruk"
+        app:layout_constraintTop_toBottomOf="@+id/til_pols">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_Opmerking"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_opmerking"
+            android:imeOptions="actionNext"
+            android:inputType="textNoSuggestions"
+            android:nextFocusForward="@+id/et_Gewicht"
+            android:textSize="14sp" />
+        <!--            android:inputType="textPersonName" />-->
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_gewicht"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:imeOptions="actionNext"
+        android:nextFocusForward="@+id/til_bovendruk"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_Time"
+        app:layout_constraintEnd_toEndOf="@+id/til_pols"
+        app:layout_constraintHorizontal_weight="1">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_Gewicht"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_gewicht"
+            android:imeOptions="actionNext"
+            android:inputType="number"
+            android:nextFocusForward="@+id/et_Bovendruk"
+            android:textSize="14sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

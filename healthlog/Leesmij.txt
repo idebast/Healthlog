@@ -1,0 +1,51 @@
+
+1) Achtergrond van de app
+Voor mensen die bloeddruk, pols en gewicht moeten bijhouden.
+Deze app zorgt er voor dat de manuele handeling van gegevens opschrijven,  
+overtikken in een Excel en daaruit een grafiek te maken niet meer nodig is.
+
+
+2) AVD
+Volgende AVD's werden gebruikt om te testen
+- Nexus 5, maar wel met API 30 (R)
+- Pixel 3 XL, met API 30 (R)
+
+
+2) Gebruikersinstructies
+Start de app. 
+Het bovenste gedeelte van het scherm is de invoer zone.
+In het onderste gedeelte komt de invoergeschiedenis.
+
+2.1) Dummy gegevens toevoegen
+Wanneer u de app voor de eerste keer start, zitten er nog geen gegevens in de 
+database.
+
+Klik op de 3 puntjes (ellipsis) in de appmenubar, en selecteer "Populate 
+Database" om een set van dummy gegevens toe te voegen aan de database.
+Na het vullen van de database wordt de geschiedenis ook getoond in de 
+invoergeschiedening (de meest recente toevoeging staat bovenaan).
+
+2.2) Gegevens toevoegen
+Voeg Gewicht, Bovendruk, Onderdruk, Pols en een eventuele Opmerking in.
+Het is niet verplicht om elk veld in te vullen.
+Druk op de groene knop met '+'.
+Het meest recente entry wordt bovenaan in de geschiedenis getoond.
+
+2.3) De historische gegevens in grafiek bekijken
+Ingevoerd gegevens die binnen hetzelfde kwartier (15 minuten) vallen worden 
+beschouwd als metingen van hetzelfde ogenblik, en horen bijgevolg bij mekaar.
+Bij het samenstellen van de  grafiek worden daarom de gemiddelde waardes 
+berekend van gegevens binnen dat kwartier. Het zijn deze gemiddelde waardes die 
+in de grafieken getoond worden.
+
+Druk in de appbar op het icoon links van de ellipsis.
+
+Nu wordt de grafiek-activity geopend. Noot: u moet de phone in landscape draaien.
+
+Bovenaan het scherm staan 3 knoppen waarmee van Bloeddruk, Pols en Gewicht 
+grafiek kan worden geschakeld.
+
+Met de back toets (<) gaat u terug naar het invoer-scherm.
+
+
+
